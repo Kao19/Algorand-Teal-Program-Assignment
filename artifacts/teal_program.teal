@@ -1,5 +1,20 @@
 #pragma version 6
 // check password
+arg 0
+byte "algorandIsAwesome"
+==
 // creator receives 10% of the 1st txn amount
+gtxn 1 Amount
+gtxn 0 Amount
+int 10
+*
+int 100
+/
+==
+&&
 // receiver for 2nd txn should be the creator's address
-
+gtxn 1 Receiver
+addr FEMHRKSXBGQRMS2BNFB3QNC6OT2TJAYHWVJYG52J3RL6KQI3QD65Z5XALY
+==
+&&
+return
